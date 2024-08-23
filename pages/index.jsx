@@ -69,7 +69,7 @@ const Home = () => {
       <Button  onClick={onConnectAccount}>Connect Account</Button>
     </ButtonGroup>
 
-    {/* <div>
+     <div>
 			{ eventData.length !== 0 && (
         <Calendar
           defaultDate={defaultDate}
@@ -87,7 +87,7 @@ const Home = () => {
           scrollToTime={scrollToTime}
         />
       )}
-		</div> */}
+		</div> 
   </Page>
   )
 }
