@@ -45,7 +45,7 @@ export default function handler(req, res) {
     const userData = JSON.parse(response);
      console.log('userData', {userData});
     email = userData.email_address;
-     accessToken = userData.access_token;
+//     accessToken = userData.access_token;
     console.log('userData.grant_id', userData.grant_id)
     grantId = userData.grant_id;
 
