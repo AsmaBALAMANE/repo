@@ -10,7 +10,7 @@ export default function handler(req, res) {
   const client_id =  "57e8ebc1-3c6a-4b20-bf4a-0420ac583d37";//process.env.NYLAS_CLIENT_ID_V3;
   const redirect_uri = `https://repo-989a.vercel.app/api/nylas_callback`;//`${process.env.NEXT_PUBLIC_VERCEL_URI}/api/nylas_callback`;
   const client_secret ="nyk_v0_z9MWd2rvuEhEJl7MhNgRF4wKt8CIQ0mkTQSrGRYyQE90IZr2fNzSSYtz8H5QE2m1";// process.env.NYLAS_CLIENT_SECRET_V3;
-  const bearerToken = process.env.NYLAS_API_KEY;
+  const bearerToken = "nyk_v0_z9MWd2rvuEhEJl7MhNgRF4wKt8CIQ0mkTQSrGRYyQE90IZr2fNzSSYtz8H5QE2m1";
   const code = req.query.code;
 
   // Add global variables to temporarily store email, grantId and bearer token
@@ -43,9 +43,9 @@ export default function handler(req, res) {
   .then(response => response.text())
   .then(response => {
     const userData = JSON.parse(response);
-    // console.log('userData', {userData});
+     console.log('userData', {userData});
     email = userData.email_address;
-    // accessToken = userData.access_token;
+     accessToken = userData.access_token;
     console.log('userData.grant_id', userData.grant_id)
     grantId = userData.grant_id;
 
@@ -84,7 +84,7 @@ export default function handler(req, res) {
       .insert(eventsToStore)
   })
   .then(({ data }) => {
-    res.status(200).redirect(process.env.NEXT_PUBLIC_VERCEL_URI)
+    res.status(200).redirect('https://repo-989a.vercel.app')
   })
   .catch(error => console.log('something went wrong', error));
 }
