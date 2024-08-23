@@ -70,7 +70,7 @@ const Home = () => {
     </ButtonGroup>
 
      <div>
-			{ eventData.length !== 0 && (
+{ eventData != null && eventData.length !== 0 && (
         <Calendar
           defaultDate={defaultDate}
           defaultView={Views.WEEK}
