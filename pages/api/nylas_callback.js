@@ -55,7 +55,7 @@ export default function handler(req, res) {
       redirect: 'follow'
     });
   })
-  .then(response => response.json())
+ /* .then(response => response.json())
   .then(response => {
     console.log({ response })
     const calendar = response.data
@@ -78,13 +78,12 @@ export default function handler(req, res) {
     console.log({events})
     const eventsToStore = events.data.map(mapEventData);
     console.log('eventsToStore', eventsToStore);
-  return;
-   /* return supabase
+    return supabase
       .from('calendar_events')
-      .insert(eventsToStore)*/
+      .insert(eventsToStore)
   })
   .then(({ data }) => {
     res.status(200).redirect('https://repo-989a.vercel.app')
-  })
+  })*/
   .catch(error => console.log('something went wrong', error));
 }
