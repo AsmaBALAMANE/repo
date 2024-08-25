@@ -78,7 +78,7 @@ export default function handler(req, res) {
     console.log({events})
     const eventsToStore = events.data.map(mapEventData);
     console.log('eventsToStore', eventsToStore);
-
+  return;
    /* return supabase
       .from('calendar_events')
       .insert(eventsToStore)*/
