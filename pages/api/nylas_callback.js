@@ -81,8 +81,8 @@ export default function handler(req, res) {
     console.log('eventsToStore', eventsToStore);
     /*return supabase
       .from('calendar_events')
-      .insert(eventsToStore)*/
-  })
+      .insert(eventsToStore)
+  })*/
   .then(({ data }) => {
     res.status(200).redirect('https://repo-989a.vercel.app')
   })
