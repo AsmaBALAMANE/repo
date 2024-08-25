@@ -15,7 +15,7 @@ function getDate(str, DateTimeObj) {
 }
 
 // starting date of react-big-calendar
-const defaultDateStr = '2022-12-11'
+const defaultDateStr = '2024-08-25'
 
 const Home = () => {
   const defaultTZ = DateTime.local().zoneName;
