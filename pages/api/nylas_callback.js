@@ -17,6 +17,7 @@ export default function handler(req, res) {
   let email = '';
   let grantId = '';
   let calendar;
+  let accessToken ='';
 
   // Utility for creating Nylas header for API calls
   const headers = new Headers();
@@ -45,7 +46,7 @@ export default function handler(req, res) {
     const userData = JSON.parse(response);
      console.log('userData', {userData});
     email = userData.email_address;
-//     accessToken = userData.access_token;
+     accessToken = userData.access_token;
     console.log('userData.grant_id', userData.grant_id)
     grantId = userData.grant_id;
 
@@ -55,7 +56,7 @@ export default function handler(req, res) {
       redirect: 'follow'
     });
   })
- /* .then(response => response.json())
+  .then(response => response.json())
   .then(response => {
     console.log({ response })
     const calendar = response.data
@@ -78,12 +79,12 @@ export default function handler(req, res) {
     console.log({events})
     const eventsToStore = events.data.map(mapEventData);
     console.log('eventsToStore', eventsToStore);
-    return supabase
+    /*return supabase
       .from('calendar_events')
-      .insert(eventsToStore)
+      .insert(eventsToStore)*/
   })
   .then(({ data }) => {
     res.status(200).redirect('https://repo-989a.vercel.app')
-  })*/
+  })
   .catch(error => console.log('something went wrong', error));
 }
