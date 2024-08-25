@@ -83,7 +83,7 @@ export default function handler(req, res) {
       .from('calendar_events')
       .insert(eventsToStore)*/
   })
-  .then(({ data }) => {
+  .then(() => {
     res.status(200).redirect('https://repo-989a.vercel.app')
   })
   .catch(error => console.log('something went wrong', error));
